@@ -1,7 +1,7 @@
 export default class Paddle {
     
-    constructor(gameWidth, gameHeight) {
-        this.gameWidth = gameWidth;
+    constructor(game) {
+        this.gameWidth = game.gameWidth;
         this.width = 150;
         this.height = 30;
 
@@ -12,8 +12,8 @@ export default class Paddle {
   
         //* Position on Canvas
         this.position = {
-            x: gameWidth / 2 - this.width / 2,
-            y: gameHeight - this.height - 10
+            x: game.gameWidth / 2 - this.width / 2,
+            y: game.gameHeight - this.height - 10
         };
     }
     
@@ -36,11 +36,6 @@ export default class Paddle {
 
     //* deltaTime(dt) how much time has gone by since it has been updated (Change of Time)
     update(deltaTime) {
-        if(!deltaTime) {
-            //* Can't divide by 0, so return
-            return;
-        }
-        
         this.position.x += this.speed;
 
         if(this.position.x < this.borderFluff ){
