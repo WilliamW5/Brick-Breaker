@@ -1,5 +1,3 @@
-import Paddle from '../src/paddle.js';
-
 export default class InputHandler {
     constructor(paddle){
         document.addEventListener('keydown', (event) =>{
