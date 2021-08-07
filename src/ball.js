@@ -10,15 +10,15 @@ export default class Ball {
         this.game = game;
 
         this.speed = {
-            x: 2,
-            y: 2
+            x: 4,
+            y: -2
         };
         this.position = {
             x: 10,
-            y: 10
+            y: 400
         };
 
-        this.size = 15;
+        this.size = 16;
     }
 
     draw(ctx){
@@ -40,6 +40,7 @@ export default class Ball {
         if(this.position.y + this.size > this.gameHeight || this.position.y < 0){
             this.speed.y = -this.speed.y
         };
+        
 
         if (detectCollision(this, this.game.paddle)){
             this.speed.y = -this.speed.y;

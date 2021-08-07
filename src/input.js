@@ -1,5 +1,7 @@
+import game from "./game.js";
+
 export default class InputHandler {
-    constructor(paddle){
+    constructor(paddle, game){
         document.addEventListener('keydown', (event) =>{
             //alert(event.keyCode); returns the button pressed
 
@@ -11,6 +13,14 @@ export default class InputHandler {
 
                 case 39:
                     paddle.moveRight();
+                    break;
+
+                case 27:
+                    game.togglePause();
+                    break;
+
+                case 32:
+                    game.start();
                     break;
             }
         });
